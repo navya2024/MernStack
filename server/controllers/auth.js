@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-import users from '../models/auth.js'
+import users from '../models/user.js'
 
 export const login = async(req,res)=>{
     const { email } = req.body;

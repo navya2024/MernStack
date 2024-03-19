@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import users from "../models/auth.js";
+import users from "../models/user.js";
 
 export const updateChanelData = async (req, res) => {
   const { id: _id } = req.params;

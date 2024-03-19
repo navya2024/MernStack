@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import videoFiles from "../models/videoFiles.js";
+import {io} from "../socket/socket.js"
 
 export const viewController = async(req,res) =>{
     const {id:_id} = req.params;
@@ -17,6 +18,7 @@ export const viewController = async(req,res) =>{
                 $set:{Views: views + 1 }
             }
         )
+        io.emit('updateViews',{videoId:_id,views:updateview.Views});
         res.status(200).json(updateview);
     }
     catch(error){

@@ -11,11 +11,15 @@ const videoFileSchema = new mongoose.Schema({
         required: true,
 
    },               
-    filePath:     {
+   filePath:     {
             type:String,
             required: true,
 
-    },                
+    }, 
+    filePath_320p: String,
+    filePath_480p: String,
+    filePath_720p: String,
+    filePath_1080p: String,               
     fileType:     {
             type:String,
             required: true,
@@ -30,7 +34,8 @@ const videoFileSchema = new mongoose.Schema({
             type:String,
             required: true,
 
-    },           
+    },    
+       
     Like:{
         type:Number,
         default:0,
@@ -41,7 +46,8 @@ const videoFileSchema = new mongoose.Schema({
     },             
     Uploder:     {
             type:String,
-    },  
+    }, 
+   
 },     
     {
         timestamps:true

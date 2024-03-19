@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema({
-    email: {type:String, require: true},
-    name:{type:String},
-    desc:{type:String},
-    joindeOn:{type:Date,default:Date.now}
-})
+// const userSchema = mongoose.Schema({
+//     email: {type:String, require: true},
+//     name:{type:String},
+//     desc:{type:String},
+//     joindeOn:{type:Date,default:Date.now}
+// })
 
-export default mongoose.model("User",userSchema)
+// export default mongoose.model("User",userSchema)

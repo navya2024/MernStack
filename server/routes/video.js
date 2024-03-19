@@ -9,8 +9,10 @@ import {viewController} from './views.js'
 import auth from '../middleware/auth.js';
 
 const routes = express.Router();
-routes.post("/uploadVideo",auth,upload.single("file"),uploadVideo)
-routes.get("/getvideos",getAllVideos)
+
+routes.post('/uploadVideo',auth,upload.single("file"),uploadVideo)
+routes.get('/getvideos',getAllVideos)
+
 routes.patch('/like/:id',auth,likeContoller);
 
 routes.post('/likeVideo',auth,likeVideoController);
@@ -26,4 +28,6 @@ routes.get('/getAllHistory',getAllHistoryController);
 routes.delete('/deleteHistory/:userId',auth,deleteHistoryController);
 
 routes.patch('/view/:id',viewController)
+
+
 export default routes; 
