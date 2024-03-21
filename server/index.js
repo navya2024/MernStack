@@ -24,6 +24,25 @@ app.use('/user',userRoutes)
 app.use('/video',videoRoutes)
 app.use('/comment',commentsRoutes)
 
+// --------------------------deployment------------------------------
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/client/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+
+// --------------------------deployment------------------------------
+
+
 app.use(express.json({limit:'30mb',extended:true}));
 app.use(express.urlencoded({limit:'30mb',extended:true}))
 app.use('/uploads',express.static(path.join('uploads')))
